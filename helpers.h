@@ -12,7 +12,9 @@
 /// @return iterator to the found element or end if not found
 template<typename iterator,typename T>
 iterator find(iterator begin, iterator end, const T& val) {
-//TODO: write your code here
+	for (iterator itr = begin; itr != end; ++itr) {
+		if ((*itr) == val)return itr;
+	}
 	return end;
 }
 /// @brief finds the first occurence when predicate returns true
@@ -24,8 +26,9 @@ iterator find(iterator begin, iterator end, const T& val) {
 /// @return iterator to the first such element or the end
 template<typename iterator, typename P>
 iterator find_if(iterator begin, iterator end, P pred) {
-	//TODO: write your code here
-
+	for (iterator itr = begin; itr != end; ++itr) {
+		if (pred(*itr))return itr;
+	}
 	return end;
 }
 
@@ -37,13 +40,33 @@ iterator find_if(iterator begin, iterator end, P pred) {
 /// @param val 
 /// @return 
 template <typename iterator,typename T>
-iterator remove(iterator begin,iterator end, T val) {
-    //TODO: write your code here
-	return end;
+iterator remove(iterator begin,iterator end,const  T& val) {
+	begin = std::find(begin, end, val);
+	if (begin == end) return begin;
+	iterator itr = begin;
+	
+	for (++itr; itr != end; ++itr) {
+		if (*itr != val) {
+			*begin = std::move(*itr);
+			++begin;
+		}
+
+	}
+	return begin;
 }
 
 template<typename iterator, typename P>
 iterator remove_if(iterator begin, iterator end, P pred) {
-	//TODO: write your code here
-	return end;
+	begin = std::find_if(begin, end, pred);
+	if (begin == end) return begin;
+	iterator itr = begin;
+
+	for (++itr; itr != end; ++itr) {
+		if (!pred(*itr)) {
+			*begin = std::move(*itr);
+			++begin;
+		}
+
+	}
+	return begin;
 }
