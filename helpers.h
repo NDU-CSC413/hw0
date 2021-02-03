@@ -70,3 +70,23 @@ iterator remove_if(iterator begin, iterator end, P pred) {
 	}
 	return begin;
 }
+void swap(std::unique_ptr<int>& x, std::unique_ptr< int>& y) {
+	std::unique_ptr<int> tmp;
+	tmp = std::move(x);
+	x = std::move(y);
+	y = std::move(tmp);
+};
+template <typename Iter>
+void reverse(Iter begin, Iter end) {
+	//std::unique_ptr<int> tmp;
+	Iter::value_type tmp;
+	while (begin!=end && begin!=--end) {
+		//std::swap(*begin, *end);
+		//(*begin).swap(*end);
+	  tmp = std::move(*begin);
+		*begin = std::move(*end);
+		*end = std::move(tmp);
+		///swap(*begin, *end);
+		++begin;
+	}
+}

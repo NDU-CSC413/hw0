@@ -18,7 +18,7 @@ TEST_CASE("Test1", "1") {
  auto d=std::distance(v.begin(),::find(v.begin(),v.end(),5));
  REQUIRE(d==7);
 }
-TEST_CASE("Test2", "2") {
+TEST_CASE("Test2", "2") {  
  std::vector<int> v {1,8,3,4,2,17,20,999,11,54,2,2,5,2};
  auto d=std::distance(v.begin(),::find(v.begin(),v.end(),5));
  REQUIRE(d==12);
