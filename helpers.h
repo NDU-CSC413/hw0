@@ -79,7 +79,7 @@ void swap(std::unique_ptr<int>& x, std::unique_ptr< int>& y) {
 template <typename Iter>
 void reverse(Iter begin, Iter end) {
 	//std::unique_ptr<int> tmp;
-	Iter::value_type tmp;
+	typename Iter::value_type tmp;
 	while (begin!=end && begin!=--end) {
 		//std::swap(*begin, *end);
 		//(*begin).swap(*end);
