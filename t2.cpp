@@ -4,9 +4,9 @@
 #include <iterator>
 #include "helpers.h"
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.h"
+#include "catch.hpp"
 
-
+/* testing implementation of remove */
 TEST_CASE("Test0", "0") {
  std::vector<int> v {1,8,3,4,2,2,2,5,2};
  auto d=::remove(v.begin(),v.end(),2);

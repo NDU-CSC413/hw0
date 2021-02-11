@@ -2,8 +2,22 @@
 #include <vector>
 #include <algorithm>
 #include <random>
+#include <memory>
 
-/// @brief finds first occurence of val in range
+struct NoCopy {
+	int _x;
+	NoCopy(){}
+	NoCopy(int x):_x(x){};
+	NoCopy(const NoCopy& rhs)=delete;
+	NoCopy(NoCopy&& rhs) noexcept  {
+		_x=std::move(rhs._x);
+	}
+	int x(){return _x;}
+	NoCopy& operator=(const NoCopy& )=delete;
+	NoCopy& operator=(NoCopy&& rhs)=default;
+
+};
+/// @brief finds first occurrence of val in range
 /// @tparam iterator 
 /// @tparam T 
 /// @param begin beginning of the range
@@ -70,23 +84,41 @@ iterator remove_if(iterator begin, iterator end, P pred) {
 	}
 	return begin;
 }
-void swap(std::unique_ptr<int>& x, std::unique_ptr< int>& y) {
-	std::unique_ptr<int> tmp;
-	tmp = std::move(x);
-	x = std::move(y);
-	y = std::move(tmp);
-};
+template<typename T>
+void my_swap(T& x,T& y){
+/* if we don't use constexpr it will give 
+* an error even if it evaluates correctly
+* at runtime. i.e. If we pass non copy constructible
+* it will detect it but for some reason at compile
+* time it tries to evaluate both if and else
+*/
+   if constexpr (std::is_copy_constructible_v<T>){
+	   T tmp; tmp=x;
+	   x=y;y=tmp;
+   }
+   else{
+	   T tmp=std::move(x);
+	   x=std::move(y);
+	   y=std::move(tmp);
+   }
+}
+
 template <typename Iter>
 void reverse(Iter begin, Iter end) {
-	//std::unique_ptr<int> tmp;
-	typename Iter::value_type tmp;
-	while (begin!=end && begin!=--end) {
-		//std::swap(*begin, *end);
-		//(*begin).swap(*end);
-	  tmp = std::move(*begin);
-		*begin = std::move(*end);
-		*end = std::move(tmp);
-		///swap(*begin, *end);
+	 while (begin!=end && begin!=--end) {
+		if constexpr (std::is_copy_constructible_v<
+		typename Iter::value_type>){
+			auto tmp=*begin;
+			*begin=*end;
+			*end=tmp;
+		}
+		else{
+		auto tmp=std::move(*begin);
+		*begin=std::move(*end);
+		*end=std::move(tmp);
+		}
+		//my_swap(*begin,*end);
+	
 		++begin;
 	}
 }

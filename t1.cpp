@@ -4,9 +4,9 @@
 #include <iterator>
 #include "helpers.h"
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.h"
+#include "catch.hpp"
 
-
+/* test implementation of find_if */
 TEST_CASE("Test0", "0") {
  std::vector<int> v {1,9,3,4,2,2,2,5,2};
  auto d=std::distance(v.begin(),::find_if(v.begin(),v.end(),

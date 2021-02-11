@@ -6,9 +6,9 @@
 #include <memory>
 #include "helpers.h"
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.h"
+#include "catch.hpp"
 
-
+/* testing implementation of reverse */
 TEST_CASE("Test0", "0") {
  std::vector<int> v {1,9,3,4,2,2,2,5,2};
  std::vector<int> u=v;

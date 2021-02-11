@@ -5,10 +5,7 @@
 #include <type_traits>
 #include <memory>
 #include "helpers.h"
-struct NoCopy {
-	std::unique_ptr<int> p;
-	NoCopy(std::unique_ptr<int> x) :p(std::move(x)) {}
-};
+
 #define EX6
 
 int main(){
@@ -97,28 +94,29 @@ int main(){
 	std::cout << "5,4,3,2,1,\n";
 	std::cout << "-------------------\n";
 	std::vector<int> v{ 1,2,3,4,5};
-67ty54er3dw2sq1a`	QW	S1ED23457OP'}
-for (auto& x : v)std::cout << x << ",";
+	for (auto& x : v)std::cout << x << ",";
 	std::cout << "\n";
 
 #endif
 #ifdef EX6
  
-	std::unique_ptr<int> a, b, c;
-	a = std::make_unique<int>(1);
-	b = std::make_unique<int>(2);
-	c = std::make_unique<int>(3);
 	
-	std::vector<std::unique_ptr<int>> v;
-	/* add a,b,c to v */
-	v.push_back(std::move(a));
-	v.push_back(std::move(b));
-	v.push_back(std::move(c));
+	std::vector<NoCopy> v;
+	NoCopy a{1};NoCopy b{2};NoCopy c{3};
+	//v.push_back(std::move(a));v.push_back(std::move(b));v.push_back(std::move(c));
+	v.push_back(NoCopy{1});v.push_back(NoCopy{2});v.push_back(NoCopy{3});
+
+	/* TODO: for some reason these two statements below do not compile*/
+	//std::vector<NoCopy> u{NoCopy{1},NoCopy{2},NoCopy{3}};
+	//std::vector<std::unique_ptr<int>> u {std::make_unique<int>(5)};
+	
 	/* call reverse */
+	// ::reverse(u.begin(),u.end());
 	::reverse(v.begin(), v.end());
-	for (auto& p : v)std::cout << *p<<",";
+	for (auto& p: v)std::cout << p.x()<<",";
 	std::cout << "\n";
-	
+	if(std::is_copy_constructible_v<NoCopy>)std::cout<<"copyable\n";
+
 #endif
 }
 
