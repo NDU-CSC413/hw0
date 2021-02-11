@@ -1,0 +1,82 @@
+{
+  "tests": [
+    {
+      "name": "test0",
+      "setup": "",
+      "run": "sh test0.sh",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "partial": true,
+      "points": 17
+    },
+    {
+      "name": "test1",
+      "setup": "",
+      "run": "build/test1",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "partial": true,
+      "points": 17
+    }
+    ,
+    {
+      "name": "test2",
+      "setup": "",
+      "run": "build/test2",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "partial": true,
+      "points": 17
+    },
+    {
+      "name": "test3",
+      "setup": "",
+      "run": "build/test3",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "partial": true,
+      "points": 17
+    },
+    {
+      "name": "test4",
+      "setup": "",
+      "run": "build/test4",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "partial": true,
+      "points": 17
+    },
+    {
+      "name": "test5",
+      "setup": "",
+      "run": "build/test5",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "partial": true,
+      "points": 10
+    },
+    {
+      "name": "test6",
+      "setup": "",
+      "run": "build/test6",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "partial": true,
+      "points": 5
+    }
+  ]
+}
