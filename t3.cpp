@@ -7,7 +7,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 
-/* testing implementation of remove_if
+/* testing implementation of remove_if*/
 TEST_CASE("Test0", "0") {
  std::vector<int> v {1,9,3,4,2,2,2,5,2};
  auto itr=::remove_if(v.begin(),v.end(),

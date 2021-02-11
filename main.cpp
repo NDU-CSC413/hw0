@@ -6,7 +6,12 @@
 #include <memory>
 #include "helpers.h"
 
-#define EX6
+/* this function could server as a driver 
+* for your implementations. Choose the #define 
+* according to which problem you are testing
+*/
+
+#define EX1 //choose one of  EX1,EX2,EX3,EX4,EX5,EX6,EX7
 
 int main(){
 	
@@ -100,23 +105,23 @@ int main(){
 #endif
 #ifdef EX6
  
-	
-	std::vector<NoCopy> v;
-	NoCopy a{1};NoCopy b{2};NoCopy c{3};
-	//v.push_back(std::move(a));v.push_back(std::move(b));v.push_back(std::move(c));
-	v.push_back(NoCopy{1});v.push_back(NoCopy{2});v.push_back(NoCopy{3});
+	std::unique_ptr<int> a{ new int(1) }, b{ new int(2) }, c{ new int{3} };
+	std::vector<std::unique_ptr<int>> v;
 
-	/* TODO: for some reason these two statements below do not compile*/
-	//std::vector<NoCopy> u{NoCopy{1},NoCopy{2},NoCopy{3}};
-	//std::vector<std::unique_ptr<int>> u {std::make_unique<int>(5)};
-	
+	/* add a,b and c to vector v */
+	/* TODO: Write your code here */
+
 	/* call reverse */
-	// ::reverse(u.begin(),u.end());
 	::reverse(v.begin(), v.end());
-	for (auto& p: v)std::cout << p.x()<<",";
+	for (auto& p: v)std::cout << *p<<",";
 	std::cout << "\n";
-	if(std::is_copy_constructible_v<NoCopy>)std::cout<<"copyable\n";
 
 #endif
+
+#ifdef EX7
+	NoCopy v;
+
+#endif // EX7
+
 }
 
