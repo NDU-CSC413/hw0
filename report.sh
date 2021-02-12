@@ -1,7 +1,7 @@
 #!/bin/bash
-
- total=$(cut -d '/' -f 1 points.txt |paste -sd '+'|bc)
-max=$(paste -sd '+' max_points.txt |bc)
+sudo apt install jq
+total=$(cut -d '/' -f 1 points.txt |paste -sd '+'|bc)
+max=$(jq '.tests[]|.points' .github/classroom/autograding.json |paste -sd '+'|bc)
 
 tests=$(paste -sd ' ' points.txt)
 gh pr comment 1 -b "Total: $total/$max"
