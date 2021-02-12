@@ -43,9 +43,9 @@
       },
       {
         "name": "test4",
-        "setup": "",
+        "setup": "cd build;cmake --build . --config Release --target test4",
         "run": "./build/test4 -r compact>>report.txt 2>>points.txt",
-        "input": "cd build;cmake --build . --config Release --target test4",
+        "input": "",
         "output": "",
         "comparison": "included",
         "timeout": 10,
