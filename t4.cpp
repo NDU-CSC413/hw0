@@ -1,33 +1,38 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <iterator>
-#include <random>
 #include <memory>
 #include "helpers.h"
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 
 /* testing implementation of reverse */
-TEST_CASE("Test0", "0") {
- std::vector<int> v {1,9,3,4,2,2,2,5,2};
- std::vector<int> u=v;
- std::reverse(u.begin(),u.end());
- ::reverse(v.begin(),v.end());
- REQUIRE(u==v);
-}
+
+#define NUM_TESTS 1.0 
+
+#ifndef MAX_POINTS 
+#define MAX_POINTS 17.0
+#pragma message ( "MAX_POINTS is not defined" )
+#endif 
+
+int correct=0;
 
 
+#define m(x) std::make_unique<int>(x)
 TEST_CASE("Test1", "1") {
-std::unique_ptr<int> a=std::make_unique<int>(13);
-std::unique_ptr<int> b=std::make_unique<int>(18);
-std::unique_ptr<int> c=std::make_unique<int>(9);
-std::vector<std::unique_ptr<int>> v;
-v.push_back(std::move(a));
-v.push_back(std::move(b));
-v.push_back(std::move(c));
-::reverse(v.begin(),v.end());
+  std::vector<int> v {1,9,3,4,2,2,2,5,2};
+  std::vector<int> u=v;
 
-// REQUIRE(u==v);
+  ::reverse(v.begin(),v.end());
+  std::reverse(u.begin(),u.end());
+
+CHECKED_IF(u==v){
+    ++correct;
+}
+#ifdef PARTIAL
+   std::cerr<<(correct* MAX_POINTS/NUM_TESTS)<<"\n";
+ #else 
+   if(correct==NUM_TESTS)std::cerr<<MAX_POINTS;
+   else std::cerr<<0<<"\n";
+ #endif 
 }
 

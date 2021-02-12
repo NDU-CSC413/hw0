@@ -1,0 +1,76 @@
+{
+    "tests": [
+      {
+        "name": "test0",
+        "setup": "",
+        "run": "./build/test0 -r compact >>report.txt 2>>points.txt",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 10,
+        "points": 17
+      },
+      {
+        "name": "test1",
+        "setup": "",
+        "run": "./build/test1  -r compact >>report.txt 2>>points.txt",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 10,
+        "points": 17
+      }
+      ,
+      {
+        "name": "test2",
+        "setup": "",
+        "run": "./build/test2 -r compact>>report.txt 2>>points.txt",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 10,
+        "points": 17
+      },
+      {
+        "name": "test3",
+        "setup": "",
+        "run": "./build/test3 -r compact>>report.txt 2>>points.txt",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 10,
+        "points": 17
+      },
+      {
+        "name": "test4",
+        "setup": "",
+        "run": "./build/test4 -r compact>>report.txt 2>>points.txt",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 10,
+        "points": 17
+      },
+      {
+        "name": "test5",
+        "setup": "",
+        "run": "./build/test5 -r compact>>report.txt 2>>points.txt",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 10,
+        "points": 10
+      },
+      {
+        "name": "test6",
+        "setup": "",
+        "run": "./build/test6 -r compact>>report.txt 2>>points.txt",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 10,
+        "points": 5
+      }
+    ]
+  }
+  

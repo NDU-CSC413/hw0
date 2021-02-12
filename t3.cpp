@@ -1,13 +1,20 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <iterator>
-#include <random>
 #include "helpers.h"
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 
 /* testing implementation of remove_if*/
+
+#define NUM_TESTS 2.0 
+
+#ifndef MAX_POINTS 
+#define MAX_POINTS 17.0
+#pragma message ( "MAX_POINTS is not defined" )
+#endif 
+
+int correct=0;
+
 TEST_CASE("Test0", "0") {
  std::vector<int> v {1,9,3,4,2,2,2,5,2};
  auto itr=::remove_if(v.begin(),v.end(),
@@ -15,7 +22,9 @@ TEST_CASE("Test0", "0") {
 			 
 			 );
  v.erase(itr,v.end());
- REQUIRE(v.size()==5);
+ CHECKED_IF(v.size()==5){
+	 ++correct;
+ }
 }
 
 TEST_CASE("Test1", "1") {
@@ -26,5 +35,13 @@ TEST_CASE("Test1", "1") {
 			 
 			 );
  v.erase(itr,v.end());
- REQUIRE(v.size()==(org-3));
+ CHECKED_IF(v.size()==(org-3)){
+	 ++correct;
+ }
+ #ifdef PARTIAL
+   std::cerr<<(correct* MAX_POINTS/NUM_TESTS)<<"\n";
+ #else 
+   if(correct==NUM_TESTS)std::cerr<<MAX_POINTS;
+   else std::cerr<<0<<"\n";
+ #endif 
 }

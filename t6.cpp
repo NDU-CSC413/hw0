@@ -1,18 +1,31 @@
 #include <iostream>
 #include <type_traits>
 #include "helpers.h"
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 
 /* testing if class NoCopy is noncopyable
 */
+#define NUM_TESTS 1.0 
+
+#ifndef MAX_POINTS 
+#define MAX_POINTS 17.0
+#pragma message ( "MAX_POINTS is not defined" )
+#endif 
+int correct=0;
 
 TEST_CASE("Test0", "1") {
 NoCopy c;
-if constexpr(std::is_copy_assignable_v<decltype(c)>)
-  REQUIRE(1==0);
-else 
-  REQUIRE(1==1);
+if constexpr(!std::is_copy_assignable_v<decltype(c)>)
+  CHECKED_IF(true){
+    ++correct;
+  }
+
+ #ifdef PARTIAL
+   std::cerr<<(correct* MAX_POINTS/NUM_TESTS)<<"\n";
+ #else 
+   if(correct==NUM_TESTS)std::cerr<<MAX_POINTS;
+   else std::cerr<<0<<"\n";
+ #endif 
 
 }
 
