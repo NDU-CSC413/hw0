@@ -13,8 +13,9 @@
 #endif 
 
 int correct=0;
+#define TEST_NAME "Test0:"
+#define TEST_DESC "testing implementation of find"
 
-/* testing implementation of find */
 TEST_CASE("Test 1/3 of find", "1") {
     int val=2;
  std::vector<int> v {1,8,3,4,2,2,2,5,2};
@@ -41,10 +42,13 @@ TEST_CASE("Test 3/3 of find", "3") {
 CHECKED_IF(d==12){
    ++correct;
  }
+ std::cout<<TEST_NAME<<TEST_DESC<<",";
  #ifdef PARTIAL
-   std::cout<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
+   std::cout<<(correct* MAX_POINTS/NUM_TESTS)
+      <<"/"<<MAX_POINTS<<std::endl;
  #else 
-   if(correct==NUM_TESTS)std::cout<<MAX_POINTS<<"/"<<MAX_POINTS<<std::endl;
+   if(correct==NUM_TESTS)
+      std::cout<<MAX_POINTS<<"/"<<MAX_POINTS<<std::endl;
    else std::cout<<"0/"<<MAX_POINTS<<std::endl;
  #endif 
 }

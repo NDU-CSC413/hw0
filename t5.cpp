@@ -15,7 +15,8 @@
 #pragma message ( "MAX_POINTS is not defined" )
 #endif 
 int correct=0;
-
+#define TEST_NAME "Test5:"
+#define TEST_DESC "testing implementation of nc_reverse"
 using up=std::unique_ptr<int>;
 #define m(x) std::make_unique<int>(x)
 
@@ -28,6 +29,8 @@ TEST_CASE("Test0", "0") {
    CHECKED_IF((*v[0]==19 && *v[1]==18)){
       ++correct;
    }
+    std::cout<<TEST_NAME<<TEST_DESC<<",";
+
    #ifdef PARTIAL
    std::cout<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
  #else 

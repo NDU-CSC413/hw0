@@ -11,7 +11,8 @@
 #define MAX_POINTS 17.0
 #pragma message ( "MAX_POINTS is not defined" )
 #endif 
-
+#define TEST_NAME "Test2:"
+#define TEST_DESC "testing implementation of remove"
 int correct=0;
 /* testing implementation of remove */
 TEST_CASE("Test0", "0") {
@@ -39,6 +40,8 @@ TEST_CASE("Test2", "2") {
  CHECKED_IF(v.size()==7){
      ++correct;
  }
+std::cout<<TEST_NAME<<TEST_DESC<<",";
+
  #ifdef PARTIAL
    std::cout<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
  #else 
