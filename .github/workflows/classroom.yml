@@ -26,15 +26,22 @@ jobs:
               #  if:  ${{ always() }}
               #  run: env
               - name: upload
+                if: ${{always()}
                 uses: actions/upload-artifact@v2
                 with:
                   name: report
                   path: report.txt
               - name: report
                 if : ${{ always()}} && github.event.run_number > 4
-                run: sh report.sh
+                run: sh report.sh >breakdown.txt
                 env:
                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              - name: upload
+                if: ${{always()}}
+                uses: actions/upload-artifact@v2
+                with:
+                      name: breakdown
+                      path: breakdown.txt
          # - uses: EndBug/add-and-commit@v5
          #   with:
          #      add: "*"
