@@ -14,11 +14,13 @@ jobs:
       tests:
         name: Autograding
         runs-on: ubuntu-latest
-        if: ${{github.event.run_number < 2}}
+        if: ${{github.run_number < 2}}
      #   needs: [build]
         steps:
               - name: number
-                run: echo ${{github.event.run_number}}
+                run: |
+                  echo "EVENT_NUMBER=${{github.event.run_number}}
+                  echo "GITHUB_NUMBER=${{github.run_number}}
               - name: env
                 run: env
               - name: checkout
