@@ -12,7 +12,7 @@
 #define MAX_POINTS 17.0
 #pragma message ( "MAX_POINTS is not defined" )
 #endif 
-#define TEST_NAME "Test1:"
+#define TEST_NAME "Test1"
 #define TEST_DESC "testing implementation of find_if"
 int correct=0;
 
@@ -37,7 +37,7 @@ TEST_CASE("Test1", "1") {
  CHECKED_IF(d==7){
 	 ++correct;
  }
-  std::cout<<TEST_NAME<<TEST_DESC<<",";
+ std::cout<<TEST_NAME<<"("<<TEST_DESC<<"):";
 
  #ifdef PARTIAL
    std::cout<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;

@@ -1,20 +1,13 @@
 #!/bin/bash
 sudo apt install jq
-total=$(cut -d '/' -f 1 points.txt |paste -sd '+'|bc)
-max=$(jq '.tests[]|.points' .github/classroom/autograding.json |paste -sd '+'|bc)
+points_file=$1
+max_file=$2
+total=$(cut -d ':' -f 2 "$points_file"|cut -d '/' -f 1 |paste -sd '+'|bc)
+max=$(jq '.tests[]|.points' "$max_file" |paste -sd '+'|bc)
 
-tests=$(paste -sd ' ' points.txt)
 gh pr comment 1 -b "Total: $total/$max"
+echo "Total: $total/$max"
 
-c=0
-for i in $tests
-do
-echo "Test $c"
-echo "------"
-echo $i 
-c=$((c+1))
-echo "=========="
-done
 
 
 #gh pr comment 1 -b "Total: $line "

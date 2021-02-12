@@ -12,7 +12,7 @@
 #pragma message ( "MAX_POINTS is not defined" )
 #endif 
 int correct=0;
-#define TEST_NAME "Test6:"
+#define TEST_NAME "Test6"
 #define TEST_DESC "testing implementation of NoCopy"
 TEST_CASE("Test0", "1") {
 NoCopy c;
@@ -20,7 +20,7 @@ if constexpr(!std::is_copy_assignable_v<decltype(c)>)
   CHECKED_IF(true){
     ++correct;
   }
- std::cout<<TEST_NAME<<TEST_DESC<<",";
+ std::cout<<TEST_NAME<<"("<<TEST_DESC<<"):";
 
  #ifdef PARTIAL
    std::cout<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
