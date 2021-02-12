@@ -32,7 +32,7 @@ jobs:
                 uses: actions/upload-artifact@v2
                 with:
                       name: breakdown
-                      path:|
+                      path: |
                          breakdown.txt
                          points.txt
                          report.txt
