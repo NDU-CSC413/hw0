@@ -2,7 +2,7 @@
     "tests": [
       {
         "name": "test0",
-        "setup": "cd build;cmake --build . --config Release --target test0",
+        "setup": "cd build;cmake --build . --config Release --target test0;echo 17>> max_points.txt",
         "run": "./build/test0 -r compact >>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -12,7 +12,7 @@
       },
       {
         "name": "test1",
-        "setup": "cd build;cmake --build . --config Release --target test1",
+        "setup": "cd build;cmake --build . --config Release --target test1;echo 17>> max_points.txt",
         "run": "./build/test1  -r compact >>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -23,7 +23,7 @@
       ,
       {
         "name": "test2",
-        "setup": "cd build;cmake --build . --config Release --target test2",
+        "setup": "cd build;cmake --build . --config Release --target test2;echo 17>> max_points.txt",
         "run": "./build/test2 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -33,7 +33,7 @@
       },
       {
         "name": "test3",
-        "setup": "cd build;cmake --build . --config Release --target test3",
+        "setup": "cd build;cmake --build . --config Release --target test3;echo 17>> max_points.txt",
         "run": "./build/test3 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -43,7 +43,7 @@
       },
       {
         "name": "test4",
-        "setup": "cd build;cmake --build . --config Release --target test4",
+        "setup": "cd build;cmake --build . --config Release --target test4;echo 17>> max_points.txt",
         "run": "./build/test4 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -53,7 +53,7 @@
       },
       {
         "name": "test5",
-        "setup": "cd build;cmake --build . --config Release --target test5",
+        "setup": "cd build;cmake --build . --config Release --target test5;echo 10>> max_points.txt",
         "run": "./build/test5 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -63,7 +63,7 @@
       },
       {
         "name": "test6",
-        "setup": "cd build;cmake --build . --config Release --target test6",
+        "setup": "cd build;cmake --build . --config Release --target test6;echo 5>> max_points.txt",
         "run": "./build/test6 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
