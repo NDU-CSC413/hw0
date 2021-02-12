@@ -2,7 +2,7 @@
 
 Modify the __body__ of the four functions in the file ```helpers.h``` used by the 
 ```main.cpp``` file. In addition to the explanations below you will find in  ```main.cpp```
-different use cases with input and the expected result. 
+different use cases with input and the expected result
 __IMPORTANT__ :
 1. you __CANNOT__ use __any__ STL algorithm unless explicitly allowed.
 2. The __only__ files you are allowed to modify are ```main.cpp``` and  ```helpers.h```
