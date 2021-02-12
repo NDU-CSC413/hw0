@@ -18,7 +18,7 @@ jobs:
      #   needs: [build]
         steps:
               - name: number
-                run: echo ${{GITHUB_RUN_NUMBER}}
+                run: echo ${{github.event.run_number}}
               - name: env
                 run: env
               - name: checkout
