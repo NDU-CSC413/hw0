@@ -5,39 +5,19 @@ env:
       BUILD_TYPE: Release 
 
 jobs:
-     # build:      
-     #       name: build
-     #       runs-on: ubuntu-latest
-     #       steps:
-     #             - uses: actions/checkout@v2
-     #             - run : sh build.sh
       tests:
         name: Autograding
         runs-on: ubuntu-latest
         if: ${{github.run_number >4}}
      #   needs: [build]
         steps:
-              - name: number
-                run: |
-                  echo "EVENT_NUMBER=${{github.event.run_number}}
-                  echo "GITHUB_NUMBER=${{github.run_number}}
-              - name: env
-                run: env
+             
               - name: checkout
                 uses: actions/checkout@v2
               - name: build
                 run: sh build.sh
               - name: autograding
                 uses : education/autograding@v1
-              #- name: env
-              #  if:  ${{ always() }}
-              #  run: env
-              - name: upload
-                if: ${{always()}}
-                uses: actions/upload-artifact@v2
-                with:
-                  name: report
-                  path: report.txt
               - name: report
                 # both conditions MUST be insider ${{ }}
                 # i leave it here for illustration
@@ -52,7 +32,17 @@ jobs:
                 uses: actions/upload-artifact@v2
                 with:
                       name: breakdown
-                      path: breakdown.txt
+                      path:|
+                         breakdown.txt
+                         points.txt
+                         report.txt
+
+         #- name: number
+         #       run: |
+         #         echo "EVENT_NUMBER=${{github.event.run_number}}
+         #         echo "GITHUB_NUMBER=${{github.run_number}}
+         #     - name: env
+         #       run: env
          # - uses: EndBug/add-and-commit@v5
          #   with:
          #      add: "*"

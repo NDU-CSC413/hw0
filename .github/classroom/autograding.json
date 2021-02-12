@@ -2,7 +2,7 @@
     "tests": [
       {
         "name": "test0",
-        "setup": "",
+        "setup": "cd build;cmake --build . --config Release --target test0",
         "run": "./build/test0 -r compact >>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -12,7 +12,7 @@
       },
       {
         "name": "test1",
-        "setup": "",
+        "setup": "cd build;cmake --build . --config Release --target test1",
         "run": "./build/test1  -r compact >>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -23,7 +23,7 @@
       ,
       {
         "name": "test2",
-        "setup": "",
+        "setup": "cd build;cmake --build . --config Release --target test2",
         "run": "./build/test2 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -33,7 +33,7 @@
       },
       {
         "name": "test3",
-        "setup": "",
+        "setup": "cd build;cmake --build . --config Release --target test3",
         "run": "./build/test3 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -45,7 +45,7 @@
         "name": "test4",
         "setup": "",
         "run": "./build/test4 -r compact>>report.txt 2>>points.txt",
-        "input": "",
+        "input": "cd build;cmake --build . --config Release --target test4",
         "output": "",
         "comparison": "included",
         "timeout": 10,
@@ -53,7 +53,7 @@
       },
       {
         "name": "test5",
-        "setup": "",
+        "setup": "cd build;cmake --build . --config Release --target test5",
         "run": "./build/test5 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
@@ -63,7 +63,7 @@
       },
       {
         "name": "test6",
-        "setup": "",
+        "setup": "cd build;cmake --build . --config Release --target test6",
         "run": "./build/test6 -r compact>>report.txt 2>>points.txt",
         "input": "",
         "output": "",
