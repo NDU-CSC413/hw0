@@ -4,8 +4,8 @@
 max=$(cut -d '/' -f 2 points.txt |paste -sd '+'|bc)
 
 tests=$(paste -sd ' ' points.txt)
-echo $total
-echo $max
+gh pr comment 1 -b "Total: $total/$max"
+
 c=0
 for i in $tests
 do
@@ -15,6 +15,8 @@ echo $i
 c=$((c+1))
 echo "=========="
 done
+
+
 #gh pr comment 1 -b "Total: $line "
 
 
