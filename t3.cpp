@@ -39,9 +39,9 @@ TEST_CASE("Test1", "1") {
 	 ++correct;
  }
  #ifdef PARTIAL
-   std::cerr<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
+   std::cout<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
  #else 
-   if(correct==NUM_TESTS)std::cerr<<MAX_POINTS<<"/"<<MAX_POINTS<<std::endl;
-   else std::cerr<<0<<"/"<<MAX_POINTS<<std::endl;
+   if(correct==NUM_TESTS)std::cout<<MAX_POINTS<<"/"<<MAX_POINTS<<std::endl;
+   else std::cout<<0<<"/"<<MAX_POINTS<<std::endl;
  #endif 
 }

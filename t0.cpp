@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <iterator>
 #include "helpers.h"
-//#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 
 #define NUM_TESTS 3.0 
@@ -43,9 +42,9 @@ CHECKED_IF(d==12){
    ++correct;
  }
  #ifdef PARTIAL
-   std::cerr<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
+   std::cout<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
  #else 
-   if(correct==NUM_TESTS)std::cerr<<MAX_POINTS<<"/"<<MAX_POINTS<<std::endl;
-   else std::cerr<<"0/"<<MAX_POINTS<<std::endl;
+   if(correct==NUM_TESTS)std::cout<<MAX_POINTS<<"/"<<MAX_POINTS<<std::endl;
+   else std::cout<<"0/"<<MAX_POINTS<<std::endl;
  #endif 
 }
