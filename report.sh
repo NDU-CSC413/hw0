@@ -1,7 +1,7 @@
 #!/bin/bash
 
  total=$(cut -d '/' -f 1 points.txt |paste -sd '+'|bc)
-max=$(cut -d '/' -f 2 points.txt |paste -sd '+'|bc)
+max=$(paste -sd '+' max_points.txt |bc)
 
 tests=$(paste -sd ' ' points.txt)
 gh pr comment 1 -b "Total: $total/$max"
