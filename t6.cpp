@@ -27,5 +27,7 @@ if constexpr(!std::is_copy_assignable_v<decltype(c)>)
    else std::cerr<<0<<"/"<<MAX_POINTS<<"\n";
  #endif 
 
+   if(correct!=NUM_TESTS)exit(1);
+
 }
 
