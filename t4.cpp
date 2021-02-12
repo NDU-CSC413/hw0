@@ -29,10 +29,10 @@ CHECKED_IF(u==v){
     ++correct;
 }
 #ifdef PARTIAL
-   std::cerr<<(correct* MAX_POINTS/NUM_TESTS)<<"\n";
+   std::cerr<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<"\n";
  #else 
-   if(correct==NUM_TESTS)std::cerr<<MAX_POINTS;
-   else std::cerr<<0<<"\n";
+   if(correct==NUM_TESTS)std::cerr<<MAX_POINTS<<"/"<<MAX_POINTS<<"\n";
+   else std::cerr<<0<<"/"<<MAX_POINTS<<"\n";
  #endif 
 }
 

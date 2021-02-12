@@ -1,10 +1,21 @@
 #!/bin/bash
 
-max=$(head -1 report.txt|cut -d ' ' -f 3|cut -d '/' -f 2)
-total=$(head -1 report.txt|cut -d ' ' -f 3|cut -d '/' -f 1)
-cat report.txt
-line=$(head -1 report.txt)
-gh pr comment 1 -b "Total: $line "
+ total=$(cut -d '/' -f 1 points.txt |paste -sd '+'|bc)
+max=$(cut -d '/' -f 2 points.txt |paste -sd '+'|bc)
+
+tests=$(paste -sd ' ' points.txt)
+echo $total
+echo $max
+c=0
+for i in $tests
+do
+echo "Test $c"
+echo "------"
+echo $i 
+c=$((c+1))
+echo "=========="
+done
+#gh pr comment 1 -b "Total: $line "
 
 
 #echo "ACTOR = $GITHUB_ACTOR "
