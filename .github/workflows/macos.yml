@@ -1,1 +1,21 @@
+name: GitHub Classroom Workflow
 
+on: [push]
+env: 
+      BUILD_TYPE: Release 
+
+jobs:
+      tests:
+        name: macOS-build
+        runs-on: macos-latest
+        steps:
+             
+              - name: checkout
+                uses: actions/checkout@v2
+              - name: build
+                run: |
+                  cmake -S . -B build
+                  cmake --build build/ --target test0
+                  ls build
+
+       
