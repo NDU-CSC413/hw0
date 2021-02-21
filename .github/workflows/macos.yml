@@ -1,5 +1,4 @@
-name: GitHub Classroom Workflow
-
+name: Build MacOs
 on: [push]
 env: 
       BUILD_TYPE: Release 
