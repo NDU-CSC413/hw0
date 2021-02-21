@@ -16,5 +16,10 @@ jobs:
                   cmake -G Xcode -S . -B build
                   cmake --build build/ --target test0
                   ls build
+              - name: upload
+                uses: actions/upload-artifact@v2
+                with:
+                      name: breakdown
+                      path: csc413-hw0.xcodeproj
 
        
