@@ -1,9 +1,10 @@
 {
+
     "tests": [
       {
         "name": "test0",
-        "setup": "cd build;cmake --build . --config Release --target test0",
-        "run": "./build/test0 -r compact 2>>report.txt >>points.txt",
+        "setup": "",
+        "run": "sh test.sh test0 report.txt points.txt test.hpp",
         "input": "",
         "output": "",
         "comparison": "included",
@@ -12,8 +13,8 @@
       },
       {
         "name": "test1",
-        "setup": "cd build;cmake --build . --config Release --target test1",
-        "run": "./build/test1  -r compact 2>>report.txt >>points.txt",
+        "setup": "",
+        "run": "sh test.sh test1 report.txt points.txt test.hpp",
         "input": "",
         "output": "",
         "comparison": "included",
@@ -23,8 +24,8 @@
       ,
       {
         "name": "test2",
-        "setup": "cd build;cmake --build . --config Release --target test2",
-        "run": "./build/test2 -r compact 2>>report.txt >>points.txt",
+        "setup": "",
+       "run": "sh test.sh test2 report.txt points.txt test.hpp",
         "input": "",
         "output": "",
         "comparison": "included",
@@ -33,8 +34,8 @@
       },
       {
         "name": "test3",
-        "setup": "cd build;cmake --build . --config Release --target test3",
-        "run": "./build/test3 -r compact 2>>report.txt >>points.txt",
+        "setup": "",
+       "run": "sh test.sh test3 report.txt points.txt test.hpp",
         "input": "",
         "output": "",
         "comparison": "included",
@@ -43,8 +44,8 @@
       },
       {
         "name": "test4",
-        "setup": "cd build;cmake --build . --config Release --target test4",
-        "run": "./build/test4 -r compact 2>>report.txt >>points.txt",
+        "setup": "",
+       "run": "sh test.sh test4 report.txt points.txt test.hpp",
         "input": "",
         "output": "",
         "comparison": "included",
@@ -53,8 +54,8 @@
       },
       {
         "name": "test5",
-        "setup": "cd build;cmake --build . --config Release --target test5",
-        "run": "./build/test5 -r compact 2>>report.txt >>points.txt",
+        "setup": "",
+      "run": "sh test.sh test5 report.txt points.txt test.hpp",
         "input": "",
         "output": "",
         "comparison": "included",
@@ -63,8 +64,8 @@
       },
       {
         "name": "test6",
-        "setup": "cd build;cmake --build . --config Release --target test6",
-        "run": "./build/test6 -r compact 2>>report.txt >>points.txt",
+        "setup": "",
+       "run": "sh test.sh test6 report.txt points.txt test.hpp",
         "input": "",
         "output": "",
         "comparison": "included",

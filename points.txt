@@ -1,0 +1,7 @@
+Test0(testing implementation of find):0/17
+Test1(testing implementation of find_if):0/17
+test2 failed to Compile:0
+Test3(testing implementation of remove_if):0/17
+Test4(testing implementation of reverse):0/17
+Test5(testing implementation of nc_reverse):0/10
+Test6(testing implementation of NoCopy):0/5

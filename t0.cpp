@@ -3,9 +3,14 @@
 #include <algorithm>
 #include <iterator>
 #include "helpers.h"
-#include "catch.hpp"
+#include "test.hpp"
 
 #define NUM_TESTS 3.0 
+
+#ifndef TEST_NAME
+#define TEST_NAME "Test0"
+#pragma message ( "TEST_NAME is not defined" )
+#endif 
 
 #ifndef MAX_POINTS 
 #define MAX_POINTS 17.0
@@ -13,7 +18,6 @@
 #endif 
 
 int correct=0;
-#define TEST_NAME "Test0"
 #define TEST_DESC "testing implementation of find"
 
 TEST_CASE("Test 1/3 of find", "1") {
@@ -39,10 +43,12 @@ TEST_CASE("Test 3/3 of find", "3") {
     int val=5;
  std::vector<int> v {1,8,3,4,2,17,20,999,11,54,2,2,5,2};
  auto d=std::distance(v.begin(),::find(v.begin(),v.end(),val));
+ std::cout<<"1\n2 99\n";
+ std::cout<<"+blah-hikmat\n 18";
 CHECKED_IF(d==12){
    ++correct;
  }
- std::cout<<TEST_NAME<<"("<<TEST_DESC<<"):";
+ std::cout<<"\n"<<TOKEN<<TEST_NAME<<"("<<TEST_DESC<<"):";
  #ifdef PARTIAL
    std::cout<<(correct* MAX_POINTS/NUM_TESTS)
       <<"/"<<MAX_POINTS<<std::endl;

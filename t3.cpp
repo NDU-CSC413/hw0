@@ -2,11 +2,16 @@
 #include <vector>
 #include <algorithm>
 #include "helpers.h"
-#include "catch.hpp"
+#include "test.hpp"
 
 /* testing implementation of remove_if*/
 
 #define NUM_TESTS 2.0 
+
+#ifndef TEST_NAME
+#define TEST_NAME "Test0"
+#pragma message ( "TEST_NAME is not defined" )
+#endif 
 
 #ifndef MAX_POINTS 
 #define MAX_POINTS 17.0
@@ -39,12 +44,14 @@ TEST_CASE("Test1", "1") {
  CHECKED_IF(v.size()==(org-3)){
 	 ++correct;
  }
- std::cout<<TEST_NAME<<"("<<TEST_DESC<<"):";
-
+ 
+ std::cout<<"\n"<<TOKEN<<TEST_NAME<<"("<<TEST_DESC<<"):";
  #ifdef PARTIAL
-   std::cout<<(correct* MAX_POINTS/NUM_TESTS)<<"/"<<MAX_POINTS<<std::endl;
+   std::cout<<(correct* MAX_POINTS/NUM_TESTS)
+      <<"/"<<MAX_POINTS<<std::endl;
  #else 
-   if(correct==NUM_TESTS)std::cout<<MAX_POINTS<<"/"<<MAX_POINTS<<std::endl;
-   else std::cout<<0<<"/"<<MAX_POINTS<<std::endl;
+   if(correct==NUM_TESTS)
+      std::cout<<MAX_POINTS<<"/"<<MAX_POINTS<<std::endl;
+   else std::cout<<"0/"<<MAX_POINTS<<std::endl;
  #endif 
 }

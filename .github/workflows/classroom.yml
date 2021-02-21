@@ -24,7 +24,7 @@ jobs:
                 # since it is redundant because >4 condition
                 # is set in the job
                 if : ${{ always() && github.run_number > 4}}
-                run: sh report.sh points.txt .github/classroom/autograding.json >breakdown.txt
+                run: sh report.sh points.txt .github/classroom/autograding.json 
                 env:
                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               - name: upload
