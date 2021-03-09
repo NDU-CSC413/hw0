@@ -7,12 +7,12 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macos-latest'
 
 steps:
 - script: |
     mkdir build
     cd build
-    cmake ..
+    cmake .. -G
     cmake --build .
   displayName: 'make'
