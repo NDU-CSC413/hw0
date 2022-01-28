@@ -18,7 +18,7 @@
 #endif 
 #define TEST_NAME "Test2"
 #define TEST_DESC "testing implementation of remove"
-int correct=0
+int correct=0;
 /* testing implementation of remove */
 TEST_CASE("Test0", "0") {
  std::vector<int> v {1,8,3,4,2,2,2,5,2};
