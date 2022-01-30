@@ -2,7 +2,7 @@
 sudo apt install jq
 points_file=$1
 max_file=$2
-total=$(cut -d ':' -f 2 "$points_file"|cut -d '/' -f 1 |paste -sd '+'|bc)
+total=$(cut -d ':' -f 2 "$points_file"|cut -d '/' -f 1 |sed s/'^$'/0/ | paste -sd '+'|bc)
 max=$(jq '.tests[]|.points' "$max_file" |paste -sd '+'|bc)
 
 gh pr comment 1 -b "Total: $total/$max"
